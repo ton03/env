@@ -1,37 +1,124 @@
 {
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.lineHeight": 26,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.renderWhitespace": "all",
-    "editor.rulers": [80],
-    "editor.snippetSuggestions": "top",
-    "explorer.confirmDragAndDrop": false,
-    "files.associations": {
-        "*.tsx": "typescriptreact",
-        "*.scss": "scss"
-    },
-    "files.trimTrailingWhitespace": true,
-    "search.exclude": {
-        "**/.git": true,
-        "**/out/": true,
-        "**/build/": true,
-        "**/javascript/dist": true,
-        "*.orig": true
-    },
-    "sublimeTextKeymap.promptV3Features": true,
-    "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
-    "terminal.integrated.shellArgs.windows": ["/bin/xhere", "/bin/zsh"],
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "One Monokai Darker",
-    "[scss]": {
-        "editor.rulers": [80]
-    },
-    "[html]": {
-        "editor.rulers": [128]
-    },
-    "[typescript]": {
-        "editor.rulers": [100, 128]
-    }
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.lineHeight": 24,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80
+  ],
+  "editor.snippetSuggestions": "top",
+  "emmet.showSuggestionsAsSnippets": true,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.scss": "scss"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.autoGuessEncoding": true,
+  "jshint.options": {
+    "esversion": 6
+  },
+  "material-icon-theme.folders.color": "#26a69a",
+  "search.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/out/": true,
+    "**/build/": true,
+    "**/javascript/dist": true,
+    "*.orig": true,
+    "*.code-workspace": true
+  },
+  "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
+  "terminal.integrated.shellArgs.windows": [
+    "/bin/xhere",
+    "/bin/zsh"
+  ],
+  "window.zoomLevel": -1,
+  "workbench.colorTheme": "One Monokai Darker",
+  "[scss]": {
+    "editor.rulers": [
+      50,
+      60,
+      80
+    ]
+  },
+  "[html]": {
+    "editor.rulers": [
+      128
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
+  "[javascript]": {
+    "editor.rulers": [
+      100,
+      128
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
+  "[typescript]": {
+    "editor.rulers": [
+      100,
+      128
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
+  "git.autofetch": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "editor.renderIndentGuides": false,
+  "sync.gist": "74e43f939eda1544f865b6ca0740d26c",
+  "sync.lastUpload": "2018-08-17T02:34:43.257Z",
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.lastDownload": "",
+  "sync.forceDownload": false,
+  "sync.host": "",
+  "sync.pathPrefix": "",
+  "sync.quietSync": false,
+  "sync.askGistName": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+    "scss.scannerExclude": [
+        ".git"
+    ],
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "todohighlight.defaultStyle": {
+    "color": "#000000",
+    "backgroundColor": "#61FEBA",
+    "overviewRulerColor": "#61FEBA",
+    "cursor": "pointer",
+    "isWholeLine": true
+  },
+  "todohighlight.keywords": [
+    "TODO: Antonn:"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "aurelia.featureToggles": {
+    "smartAutocomplete": true
+  },
+  "aurelia.autocomplete.quotes": "single",
+  "editor.tabSize": 2,
+  "terminal.integrated.rendererType": "dom",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "window.menuBarVisibility": "toggle",
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "workbench.iconTheme": "material-icon-theme"
 }
