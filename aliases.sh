@@ -3,6 +3,9 @@ alias ls="ls -GFh"
 alias ll="ls -l"
 alias lal="ls -al"
 
+## Directories
+alias cdiw="cd /cygdrive/c/Work"
+
 ## Git
 alias gits="git status"
 alias gitb="git branch"
