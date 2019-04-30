@@ -1,6 +1,6 @@
-# Ton Environment
+# Ton's Environment
 
-Aliases and stuff
+Here lies stuff that helps with my productivity
 
 Feel free to copy and use whatever you want `:)`
 

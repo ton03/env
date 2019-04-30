@@ -4,6 +4,8 @@ alias ll="ls -l"
 alias lal="ls -al"
 
 ## Directories
+alias cdw="cd ~/Work"
+alias cdp="cd ~/Play"
 alias cdiw="cd /cygdrive/c/Work"
 
 ## Git

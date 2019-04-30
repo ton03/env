@@ -29,7 +29,8 @@
     "**/build/": true,
     "**/javascript/dist": true,
     "*.orig": true,
-    "*.code-workspace": true
+		"*.code-workspace": true,
+		"**/node_modules": true
   },
   "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
   "terminal.integrated.shellArgs.windows": [
@@ -83,18 +84,18 @@
   "sync.askGistName": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-  "scss.scannerExclude": [
-    ".git"
-  ],
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
+    "scss.scannerExclude": [
+        ".git"
+    ],
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
   },
   "gitlens.historyExplorer.enabled": true,
   "todohighlight.defaultStyle": {

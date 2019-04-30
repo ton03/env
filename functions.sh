@@ -1,3 +1,8 @@
+## Gets the current git branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\<\1\>/'
+}
+
 ## Resize an image using 'sips'
 function resize_image {
     input="$1"
