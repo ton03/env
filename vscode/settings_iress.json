@@ -1,44 +1,19 @@
 {
-  "editor.detectIndentation": true,
-  "editor.fontFamily": "'Fira Code'",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 12,
-  "editor.lineHeight": 24,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    80
-  ],
-  "editor.snippetSuggestions": "top",
-  "emmet.showSuggestionsAsSnippets": true,
-  "explorer.confirmDragAndDrop": false,
-  "files.associations": {
-    "*.tsx": "typescriptreact",
-    "*.scss": "scss"
+  "[html]": {
+    "editor.detectIndentation": false,
+    "editor.rulers": [
+      128
+    ],
+    "editor.tabSize": 2
   },
-  "files.trimTrailingWhitespace": true,
-  "files.autoGuessEncoding": true,
-  "jshint.options": {
-    "esversion": 6
+  "[javascript]": {
+    "editor.detectIndentation": false,
+    "editor.rulers": [
+      100,
+      128
+    ],
+    "editor.tabSize": 2
   },
-  "material-icon-theme.folders.color": "#26a69a",
-  "search.exclude": {
-    "**/.git": true,
-    "**/.vscode": true,
-    "**/out/": true,
-    "**/build/": true,
-    "**/javascript/dist": true,
-    "*.orig": true,
-		"*.code-workspace": true,
-		"**/node_modules": true
-  },
-  "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
-  "terminal.integrated.shellArgs.windows": [
-    "/bin/xhere",
-    "/bin/zsh"
-  ],
-  "window.zoomLevel": -1,
-  "workbench.colorTheme": "One Monokai Darker",
   "[scss]": {
     "editor.rulers": [
       50,
@@ -46,80 +21,122 @@
       80
     ]
   },
-  "[html]": {
-    "editor.rulers": [
-      128
-    ],
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
-  },
-  "[javascript]": {
-    "editor.rulers": [
-      100,
-      128
-    ],
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
-  },
   "[typescript]": {
+    "editor.detectIndentation": false,
     "editor.rulers": [
       100,
       128
     ],
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
+    "editor.tabSize": 2
   },
-  "git.autofetch": true,
-  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "aurelia.autocomplete.quotes": "single",
+  "aurelia.featureToggles": {
+    "smartAutocomplete": true
+  },
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.fontWeight": "500",
+  "editor.lineHeight": 19,
+  "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderIndentGuides": false,
-  "sync.gist": "74e43f939eda1544f865b6ca0740d26c",
-  "sync.lastUpload": "2018-08-17T02:34:43.257Z",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80
+  ],
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "emmet.showSuggestionsAsSnippets": true,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.scss": "scss",
+    "*.tsx": "typescriptreact"
+  },
+  "files.autoGuessEncoding": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "jshint.options": {
+    "esversion": 6
+  },
+  "material-icon-theme.folders.color": "#26a69a",
+  "scss.scannerExclude": [
+    ".git"
+  ],
+  "search.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/build/": true,
+    "**/javascript/dist": true,
+    "**/node_modules": true,
+    "**/out/": true,
+    "*.code-workspace": true,
+    "*.orig": true
+  },
+  "sync.askGistName": false,
   "sync.autoDownload": false,
   "sync.autoUpload": false,
-  "sync.lastDownload": "",
   "sync.forceDownload": false,
-  "sync.host": "",
-  "sync.pathPrefix": "",
+  "sync.gist": "74e43f939eda1544f865b6ca0740d26c",
   "sync.quietSync": false,
-  "sync.askGistName": false,
   "sync.removeExtensions": true,
   "sync.syncExtensions": true,
-    "scss.scannerExclude": [
-        ".git"
-    ],
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
-  },
-  "gitlens.historyExplorer.enabled": true,
+  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
+  "terminal.integrated.shellArgs.windows": [
+    "/bin/xhere",
+    "/bin/zsh"
+  ],
   "todohighlight.defaultStyle": {
-    "color": "#000000",
     "backgroundColor": "#61FEBA",
-    "overviewRulerColor": "#61FEBA",
+    "color": "#000000",
     "cursor": "pointer",
-    "isWholeLine": true
+    "isWholeLine": true,
+    "overviewRulerColor": "#61FEBA"
   },
   "todohighlight.keywords": [
     "TODO: Antonn:"
   ],
   "typescript.updateImportsOnFileMove.enabled": "never",
-  "aurelia.featureToggles": {
-    "smartAutocomplete": true
-  },
-  "aurelia.autocomplete.quotes": "single",
-  "editor.tabSize": 2,
-  "terminal.integrated.rendererType": "dom",
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true,
   "window.menuBarVisibility": "toggle",
-  "workbench.sideBar.location": "left",
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
-  "workbench.statusBar.visible": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.colorCustomizations": {
+    "terminal.ansiBlack": "#546d79",
+    "terminal.ansiBlue": "#40c4fe",
+    "terminal.ansiBrightBlack": "#b0bec4",
+    "terminal.ansiBrightBlue": "#80d7fe",
+    "terminal.ansiBrightCyan": "#a7fdeb",
+    "terminal.ansiBrightGreen": "#b9f6c9",
+    "terminal.ansiBrightMagenta": "#ff80ab",
+    "terminal.ansiBrightRed": "#ff8980",
+    "terminal.ansiBrightWhite": "#fefefe",
+    "terminal.ansiBrightYellow": "#ffe47e",
+    "terminal.ansiCyan": "#64fcda",
+    "terminal.ansiGreen": "#69f0ad",
+    "terminal.ansiMagenta": "#ff3f80",
+    "terminal.ansiRed": "#ff5151",
+    "terminal.ansiWhite": "#fefefe",
+    "terminal.ansiYellow": "#ffd73f",
+    "terminal.background": "#263137",
+    "terminal.foreground": "#eceef0",
+    "terminal.selectionBackground": "#607c8b"
+  },
+  "workbench.colorTheme": "Kary Pro Colors ? Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true
 }
