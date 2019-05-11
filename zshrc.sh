@@ -8,3 +8,4 @@ source "${DIR}/functions.sh"
 
 ## Wow much colors
 source "${DIR}/zshrc_theme.sh"
+
