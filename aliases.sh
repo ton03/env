@@ -1,5 +1,5 @@
 ## General
-alias ls="ls -GFh"
+alias ls="ls -GFh --color=auto"
 alias ll="ls -l"
 alias lal="ls -al"
 
@@ -26,3 +26,10 @@ alias gitrd="git review --download"
 alias gitrf="git review --finish"
 alias gitl="git log --graph --abbrev-commit --pretty=oneline --decorate"
 alias gitk="(which gitk &> /dev/null && gitk) || gitl"
+
+## Yarn
+alias y="yarn"
+alias ys="yarn start"
+alias yb="yarn build"
+alias yt="yarn test"
+
