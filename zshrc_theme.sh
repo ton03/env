@@ -6,8 +6,8 @@ P9K_PROMPT_ON_NEWLINE=true
 P9K_RPROMPT_ICON_LEFT=true
 # P9K_RPROMPT_ON_NEWLINE=true
 
-P9K_LEFT_PROMPT_ELEMENTS=(dir_writable user dir vcs )
-P9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs  disk_usage ram time )
+P9K_LEFT_PROMPT_ELEMENTS=(dir_writable user dir vcs virtualenv )
+P9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs  disk_usage ram time )
 # time os_icon
 P9K_NODE_VERSION_FOREGROUND="black"
 P9K_TIME_ICON=""
@@ -57,10 +57,10 @@ ZSH_DISABLE_COMPFIX=true
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
-P9K_VCS_SHORTEN_LENGTH=4
-P9K_VCS_SHORTEN_MIN_LENGTH=11
-P9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
-P9K_VCS_SHORTEN_DELIMITER="…"
+# P9K_VCS_SHORTEN_LENGTH=4
+# P9K_VCS_SHORTEN_MIN_LENGTH=11
+# P9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
+# P9K_VCS_SHORTEN_DELIMITER="…"
 P9K_DIR_SHORTEN_DELIMITER="…"
 
 source ~/Play/powerlevel9k/powerlevel9k.zsh-theme
