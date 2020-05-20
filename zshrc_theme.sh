@@ -7,7 +7,8 @@ P9K_RPROMPT_ICON_LEFT=true
 # P9K_RPROMPT_ON_NEWLINE=true
 
 P9K_LEFT_PROMPT_ELEMENTS=(dir_writable user dir vcs virtualenv )
-P9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs  disk_usage ram time )
+# P9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs  disk_usage ram time )
+P9K_RIGHT_PROMPT_ELEMENTS=()
 # time os_icon
 P9K_NODE_VERSION_FOREGROUND="black"
 P9K_TIME_ICON=""
