@@ -7,6 +7,6 @@ source "${DIR}/aliases.sh"
 source "${DIR}/functions.sh"
 
 ## Wow much colors
-source /Users/ton/Play/powerlevel10k/powerlevel10k.zsh-theme
+source /Users/antonn/Work/powerlevel10k/powerlevel10k.zsh-theme
 #source "${DIR}/zshrc_theme.sh"
 

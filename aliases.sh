@@ -1,5 +1,5 @@
 ## General
-alias ls="ls -GFh --color=auto"
+alias ls="ls -GFh"
 alias ll="ls -l"
 alias lal="ls -al"
 
