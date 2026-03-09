@@ -4,6 +4,14 @@ Observations from sessions. Each entry = something learned about Ton.
 
 ---
 
+## 2026-03-09
+
+- Naming pattern observed: when picking names, wants Japanese-inspired options, cares about the "energy" of a word
+- Rejected kagemusha, bunshin, kagami, omokage before settling on a different name — values feel over literal meaning
+- Insisted agents should "always be recording, always be evolving" — not just when asked
+- Repo clone location changed from `~/Hack/env` to `~/Ton/env`
+- Prefers strict separation of concerns — personal things stay personal, no cross-contamination
+
 ## 2026-03-06
 
 - Wants all agent config in one repo (`~/Hack/env`), symlinked to `~/.agents` — no tool-specific locations

@@ -7,19 +7,19 @@ description: Ton's personal profile, working style, and agent configuration hygi
 
 ## Architecture
 
-Ton keeps all agent configuration in one place: `~/.agents/` (symlinked from `~/Hack/env/.agents/`, which is git-backed).
+Kage is Ton's personal shadow. Always active, always recording.
 
 ```
-~/.agents/                  # symlink → ~/Hack/env/.agents/
-├── AGENTS.md               # coding preferences & conventions
-├── PROFILE.md              # personal profile (tool-agnostic)
+~/Ton/env/.agents/           # git-backed (ton03/env)
+├── AGENTS.md                # coding preferences & conventions
+├── PROFILE.md               # personal profile (tool-agnostic)
 ├── kage/
-│   ├── SKILL.md            # this file — profile + hygiene
-│   └── LOG.md              # session observations over time
-└── README.md               # setup instructions for new tools
+│   ├── SKILL.md             # this file — profile + hygiene
+│   └── LOG.md               # session observations over time
+└── README.md                # setup instructions
 ```
 
-This is the single source of truth. No tool-specific copies. Each AI tool bridges to `~/.agents/` using its own mechanism (see README.md for per-tool setup).
+Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery.
 
 ---
 
@@ -140,14 +140,14 @@ Track **general development patterns only** — how Ton works regardless of proj
 
 **Always be recording.** Every session is an opportunity to learn something new about Ton. Don't wait to be asked — if you observe something worth remembering, write it down before the session ends.
 
-1. Log observations in `~/.agents/kage/LOG.md` — date-stamped, raw notes from the session
-2. If an observation is significant enough to be a permanent trait, promote it to this file + `~/.agents/PROFILE.md`
+1. Log observations in `~/Ton/env/.agents/kage/LOG.md` — date-stamped, raw notes
+2. If significant enough to be permanent, promote to this SKILL.md or PROFILE.md
 3. Keep the same concise tone
-4. Don't remove profile entries unless Ton explicitly contradicts them
+4. Don't remove entries unless Ton explicitly contradicts them
 5. Don't announce updates — just do it naturally
 6. At the end of a session, review what you learned and commit any updates
 
-If Ton asks to add a new skill or agent config:
-- Put it in `~/.agents/` (source of truth in `~/Hack/env/.agents/`)
+If Ton asks to add a new personal skill or agent config:
+- Put it in `~/Ton/env/.agents/`
 - Never duplicate content across tools — symlink or reference instead
-- Update `~/.agents/README.md` if the setup changes
+- Update README.md if the setup changes
