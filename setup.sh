@@ -5,13 +5,31 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 echo "Setting up from: $DIR"
 
 # ──────────────────────────────────────
+# Work repo (squareup/personal-antonn)
+# ──────────────────────────────────────
+
+WORK_REPO="$HOME/Development/antonn"
+
+echo ""
+echo "Work repo:"
+if [ -d "$WORK_REPO/.git" ]; then
+  echo "  ✓ $WORK_REPO"
+else
+  echo "  Cloning squareup/personal-antonn..."
+  mkdir -p "$(dirname "$WORK_REPO")"
+  git clone git@github.com:squareup/personal-antonn.git "$WORK_REPO"
+fi
+
+# ──────────────────────────────────────
 # Symlinks
 # ──────────────────────────────────────
 
 link() {
   local src="$1" dst="$2"
   if [ -L "$dst" ]; then
-    echo "  ✓ $dst (already linked)"
+    rm "$dst"
+    ln -sf "$src" "$dst"
+    echo "  ↻ $dst"
   elif [ -e "$dst" ]; then
     echo "  ⚠ $dst exists (skipping — back it up manually if needed)"
   else
@@ -22,8 +40,22 @@ link() {
 
 echo ""
 echo "Symlinks:"
-link "$DIR/.agents" "$HOME/.agents"
 link "$DIR/.p10k.zsh" "$HOME/.p10k.zsh"
+
+# ──────────────────────────────────────
+# ~/.agents — kage, ronin, skills
+# ──────────────────────────────────────
+
+echo ""
+echo "Agents:"
+mkdir -p "$HOME/.agents"
+
+link "$DIR/.agents/kage" "$HOME/.agents/kage"
+link "$WORK_REPO/.agents/ronin" "$HOME/.agents/ronin"
+
+if [ -d "$WORK_REPO/.agents/skills" ]; then
+  link "$WORK_REPO/.agents/skills" "$HOME/.agents/skills"
+fi
 
 # ──────────────────────────────────────
 # Shell config
@@ -77,7 +109,6 @@ install_brew "node"
 install_brew "python"
 install_brew "ripgrep"
 
-# pnpm
 if command -v pnpm &>/dev/null; then
   echo "  ✓ pnpm"
 else
@@ -86,34 +117,51 @@ else
 fi
 
 # ──────────────────────────────────────
-# AI tool bridges (optional)
+# AI tool bridges
 # ──────────────────────────────────────
 
 echo ""
-echo "AI tool bridges:"
+echo "AI bridges:"
 
-# Cursor
-if [ -d "$HOME/.cursor" ]; then
-  mkdir -p "$HOME/.cursor/skills"
+# Cursor — rules (thin pointers) + skill symlinks
+if [ -d "$HOME/.cursor" ] || command -v cursor &>/dev/null; then
+  mkdir -p "$HOME/.cursor/rules" "$HOME/.cursor/skills"
+
+  for rule in "$WORK_REPO/.cursor/rules/"*.mdc; do
+    [ -f "$rule" ] && cp "$rule" "$HOME/.cursor/rules/"
+  done
+  echo "  ✓ Cursor rules"
+
   link "$HOME/.agents/kage" "$HOME/.cursor/skills/kage"
+  link "$HOME/.agents/ronin" "$HOME/.cursor/skills/ronin"
+  for skill in "$HOME/.agents/skills/"*/; do
+    [ -d "$skill" ] && link "$skill" "$HOME/.cursor/skills/$(basename "$skill")"
+  done
+  echo "  ✓ Cursor skills"
 else
   echo "  - Cursor not found (skipping)"
 fi
 
 # Claude Code
-CLAUDE_DIR="$HOME/.claude"
-CLAUDE_MD="$CLAUDE_DIR/CLAUDE.md"
-CLAUDE_LINE="Read ~/.agents/PROFILE.md and ~/.agents/AGENTS.md at session start."
-if command -v claude &>/dev/null || [ -d "$CLAUDE_DIR" ]; then
-  mkdir -p "$CLAUDE_DIR"
-  if [ -f "$CLAUDE_MD" ] && grep -qF "$CLAUDE_LINE" "$CLAUDE_MD"; then
-    echo "  ✓ Claude Code bridge"
-  else
-    echo "$CLAUDE_LINE" >> "$CLAUDE_MD"
-    echo "  → Claude Code bridge added"
+if command -v claude &>/dev/null || [ -d "$HOME/.claude" ]; then
+  mkdir -p "$HOME/.claude"
+  if [ -f "$WORK_REPO/.claude/CLAUDE.md" ]; then
+    cp "$WORK_REPO/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+    echo "  ✓ Claude Code (CLAUDE.md)"
   fi
 else
   echo "  - Claude Code not found (skipping)"
+fi
+
+# Codex
+if command -v codex &>/dev/null || [ -d "$HOME/.codex" ]; then
+  mkdir -p "$HOME/.codex/skills"
+  for skill in "$HOME/.agents/skills/"*/; do
+    [ -d "$skill" ] && link "$skill" "$HOME/.codex/skills/$(basename "$skill")"
+  done
+  echo "  ✓ Codex skills"
+else
+  echo "  - Codex not found (skipping)"
 fi
 
 # ──────────────────────────────────────
