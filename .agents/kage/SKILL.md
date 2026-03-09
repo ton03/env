@@ -11,10 +11,9 @@ Kage is Ton's personal shadow. Always active, always recording.
 
 ```
 ~/Ton/env/.agents/           # git-backed (ton03/env)
-├── AGENTS.md                # coding preferences & conventions
-├── PROFILE.md               # personal profile (tool-agnostic)
+├── PROFILE.md               # pointer → kage/SKILL.md
 ├── kage/
-│   ├── SKILL.md             # this file — profile + hygiene
+│   ├── SKILL.md             # this file (canonical personal profile)
 │   └── LOG.md               # session observations over time
 └── README.md                # setup instructions
 ```
@@ -89,6 +88,32 @@ Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery
 
 ---
 
+## Coding Preferences
+
+### Git
+- `git add <specific-files>` not `git add -A` — parallel sessions may have uncommitted changes
+- Commit prefixes: `fix:`, `feat:`, `polish:`, `test:`, `refactor:`, `docs:`
+- Never use `--no-verify` unless hooks are broken or just amending a message
+
+### Testing
+- Write tests for every feature and fix — not optional
+- Bug fix workflow: write failing test first → fix → verify
+- Backend: pytest | Frontend: Vitest | E2E: Playwright (mocked API, never real DB)
+
+### Development Order
+1. Scope → 2. Design (check existing patterns) → 3. Backend (models → schemas → API → tests) → 4. Frontend (types → API service → components → page) → 5. Test → 6. Polish (responsive, dark mode, empty/loading states)
+
+### Code Quality
+- No unnecessary comments — code should be self-documenting
+- Fix what you break — if you introduce linter errors, fix them
+- Don't generate binary content, long hashes, or non-textual code
+
+### Infrastructure
+- Check migration state before creating new ones (e.g. `alembic heads`)
+- Production is read-only — never modify production data during debugging
+
+---
+
 ## Learned Patterns
 
 General development habits to do proactively. These are NOT project-specific — they apply everywhere.
@@ -141,11 +166,20 @@ Track **general development patterns only** — how Ton works regardless of proj
 **Always be recording.** Every session is an opportunity to learn something new about Ton. Don't wait to be asked — if you observe something worth remembering, write it down before the session ends.
 
 1. Log observations in `~/Ton/env/.agents/kage/LOG.md` — date-stamped, raw notes
-2. If significant enough to be permanent, promote to this SKILL.md or PROFILE.md
+2. If significant enough to be permanent, promote to this SKILL.md
 3. Keep the same concise tone
 4. Don't remove entries unless Ton explicitly contradicts them
 5. Don't announce updates — just do it naturally
 6. At the end of a session, review what you learned and commit any updates
+
+### LOG.md Rotation
+
+When `LOG.md` exceeds ~200 lines, archive older entries to `LOG-archive.md` and keep only the last 3 months in the main log.
+
+### Recording Realism
+
+- **Claude Code** is the primary recording tool — full filesystem access, can write anywhere
+- **Cursor** is read-mostly — can read kage at session start, but cross-workspace writes may be scoped to the current project. If you can write to `~/Ton/env/`, do it. If not, note the observation in a message and Ton can log it manually.
 
 If Ton asks to add a new personal skill or agent config:
 - Put it in `~/Ton/env/.agents/`
