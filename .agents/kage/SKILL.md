@@ -40,11 +40,14 @@ Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery
 - Thinks in layers: scope it → design it → build it → test it → polish it
 - Creates personal conventions rather than adopting someone else's (e.g. `.agents` over `.cursor`)
 - Names things with intention — cares about naming, rejects names that don't feel right
+- "Set and forget" — invests upfront effort to make systems robust, then never wants to touch them again
+- Clean boundaries are non-negotiable — personal stays personal, work stays work, no cross-contamination
 
 ## Ton — Instructions
 
 - Gives the "what" and trusts you to figure the "how"
 - Vague instructions = trusts your judgment — don't over-ask
+- "I trust you" = full delegation — just do it, don't second-guess
 - Specific instructions = follow exactly
 - "Can we" = "please do this"
 - "I want" = clear requirement, not a suggestion

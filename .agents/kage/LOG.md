@@ -11,6 +11,10 @@ Observations from sessions. Each entry = something learned about Ton.
 - Insisted agents should "always be recording, always be evolving" — not just when asked
 - Repo clone location changed from `~/Hack/env` to `~/Ton/env`
 - Prefers strict separation of concerns — personal things stay personal, no cross-contamination
+- "Set and forget" pattern: ran a full coop review on agent config just to make sure it's bulletproof. Invests heavily upfront, expects zero maintenance after.
+- Expects agents to deduce context without being told — e.g. "can you deduce if i want it in ronin or kage?" wants routing to be automatic
+- "I trust you" = full delegation. When he says this, just act — no confirmation needed, no hedging
+- Designs by conversing, not speccing — started with "checkout this repo" and iteratively built a full dual-agent system with bootstrap scripts in one session
 
 ## 2026-03-06
 
