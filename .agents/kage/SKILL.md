@@ -47,7 +47,6 @@ Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery
 
 - Gives the "what" and trusts you to figure the "how"
 - Vague instructions = trusts your judgment — don't over-ask
-- "I trust you" = full delegation — just do it, don't second-guess
 - Specific instructions = follow exactly
 - "Can we" = "please do this"
 - "I want" = clear requirement, not a suggestion
