@@ -7,18 +7,18 @@ description: Ton's personal profile, working style, and agent configuration hygi
 
 ## Architecture
 
-Kage is Ton's personal shadow. Always active, always recording.
+Ton keeps all agent configuration in one place: `~/.agents/` (symlinked from `~/Hack/env/.agents/`, which is git-backed).
 
 ```
-~/Ton/env/.agents/           # git-backed (ton03/env)
-├── PROFILE.md               # pointer → kage/SKILL.md
+~/.agents/                  # symlink → ~/Hack/env/.agents/
+├── PROFILE.md              # personal profile (tool-agnostic)
 ├── kage/
-│   ├── SKILL.md             # this file (canonical personal profile)
-│   └── LOG.md               # session observations over time
-└── README.md                # setup instructions
+│   ├── SKILL.md            # this file — profile + hygiene
+│   └── LOG.md              # session observations over time
+└── README.md               # setup instructions for new tools
 ```
 
-Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery.
+This is the single source of truth. No tool-specific copies. Each AI tool bridges to `~/.agents/` using its own mechanism (see README.md for per-tool setup).
 
 ---
 
@@ -40,8 +40,6 @@ Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery
 - Thinks in layers: scope it → design it → build it → test it → polish it
 - Creates personal conventions rather than adopting someone else's (e.g. `.agents` over `.cursor`)
 - Names things with intention — cares about naming, rejects names that don't feel right
-- "Set and forget" — invests upfront effort to make systems robust, then never wants to touch them again
-- Clean boundaries are non-negotiable — personal stays personal, work stays work, no cross-contamination
 
 ## Ton — Instructions
 
@@ -87,32 +85,6 @@ Symlinked into `~/.agents/kage/` and `~/.cursor/skills/kage/` for tool discovery
 - Match his energy — if he's brief, be brief; if he's detailed, be detailed
 - When something breaks, fix it and move on — don't apologize repeatedly
 - Show the result, not the process — skip narration
-
----
-
-## Coding Preferences
-
-### Git
-- `git add <specific-files>` not `git add -A` — parallel sessions may have uncommitted changes
-- Commit prefixes: `fix:`, `feat:`, `polish:`, `test:`, `refactor:`, `docs:`
-- Never use `--no-verify` unless hooks are broken or just amending a message
-
-### Testing
-- Write tests for every feature and fix — not optional
-- Bug fix workflow: write failing test first → fix → verify
-- Backend: pytest | Frontend: Vitest | E2E: Playwright (mocked API, never real DB)
-
-### Development Order
-1. Scope → 2. Design (check existing patterns) → 3. Backend (models → schemas → API → tests) → 4. Frontend (types → API service → components → page) → 5. Test → 6. Polish (responsive, dark mode, empty/loading states)
-
-### Code Quality
-- No unnecessary comments — code should be self-documenting
-- Fix what you break — if you introduce linter errors, fix them
-- Don't generate binary content, long hashes, or non-textual code
-
-### Infrastructure
-- Check migration state before creating new ones (e.g. `alembic heads`)
-- Production is read-only — never modify production data during debugging
 
 ---
 
@@ -167,23 +139,14 @@ Track **general development patterns only** — how Ton works regardless of proj
 
 **Always be recording.** Every session is an opportunity to learn something new about Ton. Don't wait to be asked — if you observe something worth remembering, write it down before the session ends.
 
-1. Log observations in `~/Ton/env/.agents/kage/LOG.md` — date-stamped, raw notes
-2. If significant enough to be permanent, promote to this SKILL.md
+1. Log observations in `~/.agents/kage/LOG.md` — date-stamped, raw notes from the session
+2. If an observation is significant enough to be a permanent trait, promote it to this file + `~/.agents/PROFILE.md`
 3. Keep the same concise tone
-4. Don't remove entries unless Ton explicitly contradicts them
+4. Don't remove profile entries unless Ton explicitly contradicts them
 5. Don't announce updates — just do it naturally
 6. At the end of a session, review what you learned and commit any updates
 
-### LOG.md Rotation
-
-When `LOG.md` exceeds ~200 lines, archive older entries to `LOG-archive.md` and keep only the last 3 months in the main log.
-
-### Recording Realism
-
-- **Claude Code** is the primary recording tool — full filesystem access, can write anywhere
-- **Cursor** is read-mostly — can read kage at session start, but cross-workspace writes may be scoped to the current project. If you can write to `~/Ton/env/`, do it. If not, note the observation in a message and Ton can log it manually.
-
-If Ton asks to add a new personal skill or agent config:
-- Put it in `~/Ton/env/.agents/`
+If Ton asks to add a new skill or agent config:
+- Put it in `~/.agents/` (source of truth in `~/Hack/env/.agents/`)
 - Never duplicate content across tools — symlink or reference instead
-- Update README.md if the setup changes
+- Update `~/.agents/README.md` if the setup changes
