@@ -4,6 +4,16 @@ Observations from sessions. Each entry = something learned about Ton.
 
 ---
 
+## 2026-03-11
+
+- Corrected: work tokens/credentials go in ronin log, not kage. Kage = personal, ronin = Block/Square work.
+
+## 2026-03-10
+
+- "ronin and kage should always be alwaysApply!!! and they need to keep evolving as I work on all the shit!" — non-negotiable. Both agents always active, always learning.
+- Gets frustrated when agents don't proactively record — recording isn't optional, it's the whole point of kage/ronin
+- Expects agents to update context docs (ACTIVE.md, market-react.md, journal/) automatically as work happens, not just at session end
+
 ## 2026-03-09
 
 - Naming pattern observed: when picking names, wants Japanese-inspired options, cares about the "energy" of a word
