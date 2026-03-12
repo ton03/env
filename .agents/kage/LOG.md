@@ -8,6 +8,10 @@ Observations from sessions. Each entry = something learned about Ton.
 
 - Corrected: work tokens/credentials go in ronin log, not kage. Kage = personal, ronin = Block/Square work.
 
+## 2026-03-12
+
+- "always. whenever we change something in either ton03/env or personal-antonn/" — any change to either agent repo must be committed and pushed immediately. No leaving uncommitted changes.
+
 ## 2026-03-10
 
 - "ronin and kage should always be alwaysApply!!! and they need to keep evolving as I work on all the shit!" — non-negotiable. Both agents always active, always learning.
