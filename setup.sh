@@ -143,6 +143,7 @@ fi
 
 echo ""
 echo "Symlinks:"
+link "$DIR/AGENTS.md" "$HOME/AGENTS.md"
 link "$DIR/.p10k.zsh" "$HOME/.p10k.zsh"
 
 # ──────────────────────────────────────
@@ -254,6 +255,8 @@ fi
 
 # Amp — reads from ~/.agents/skills/ directly, no extra wiring needed
 if command -v amp &>/dev/null; then
+  mkdir -p "$HOME/.config/amp"
+  link "$HOME/AGENTS.md" "$HOME/.config/amp/AGENTS.md"
   echo "  ✓ Amp (reads ~/.agents/skills/)"
 else
   echo "  - Amp not found (skipping)"

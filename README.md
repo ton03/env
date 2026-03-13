@@ -12,6 +12,7 @@ git clone https://github.com/ton03/env.git ~/Ton/env
 The setup script:
 - Clones the work repo (`squareup/personal-antonn`) if missing
 - Symlinks kage + ronin + skills into `~/.agents/`
+- Symlinks `AGENTS.md` into `~/AGENTS.md` for Amp/global agent bootstrap
 - Sources shell config into `~/.zshrc`
 - Installs Homebrew, git, node, python, ripgrep, pnpm
 - Sets up Cursor, Claude Code, and Codex bridges
